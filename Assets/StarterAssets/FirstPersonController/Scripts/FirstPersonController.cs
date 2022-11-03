@@ -13,11 +13,11 @@ namespace StarterAssets
 	{
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
-		public float MoveSpeed = 30.0f;
+		public float MoveSpeed = 40.0f;
 		[Tooltip("Sprint speed of the character in m/s")]
-		public float SprintSpeed = 40.0f;
+		public float SprintSpeed = 50.0f;
 		[Tooltip("Rotation speed of the character")]
-		public float RotationSpeed = 30.0f;
+		public float RotationSpeed = 500.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 
@@ -95,7 +95,7 @@ namespace StarterAssets
 			}
 		}
 
-		private void Start()
+		/*private*/ void Start()
 		{
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
@@ -137,8 +137,8 @@ namespace StarterAssets
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 
-				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
-				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
+				_cinemachineTargetPitch += _input.look.y * RotationSpeed *2  * deltaTimeMultiplier;
+				_rotationVelocity = _input.look.x * RotationSpeed *2 * deltaTimeMultiplier;
 
 				// clamp our pitch rotation
 				_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
