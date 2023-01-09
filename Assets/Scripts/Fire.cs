@@ -8,8 +8,16 @@ public class Fire : MonoBehaviour
 public float speed = 1190;
     public double r = -1.5;
     Rigidbody instantiatedProjectile;
-// Update is called once per frame
-void Update()
+    void OnTriggerEnter(Collider other)
+    {
+
+
+       Destroy(instantiatedProjectile.gameObject);
+
+
+    }
+    // Update is called once per frame
+    void Update()
 {
     if (Input.GetButtonDown("Fire1"))
     {
@@ -19,12 +27,5 @@ void Update()
 }
 
 
-    void OnTriggerEnter(Collider other)
-    {
-
-
-        Destroy(instantiatedProjectile);
-
-
-    }
+   
 }
