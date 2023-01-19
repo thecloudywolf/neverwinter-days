@@ -10,11 +10,15 @@ public float speed = 1190;
     Rigidbody instantiatedProjectile;
     void OnTriggerEnter(Collider other)
     {
+        
 
 
-       Destroy(instantiatedProjectile.gameObject);
 
+    }
+    void OnCollisionEnter(Collision collision)
+    {
 
+        
     }
     // Update is called once per frame
     void Update()
