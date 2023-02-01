@@ -10,7 +10,7 @@ public class Manager : MonoBehaviour
     [SerializeField]
     Text timeText;
 
-    bool isPaused;
+    public bool isPaused;
     void Start()
     {
         UIPanel.gameObject.SetActive(false);
@@ -44,6 +44,7 @@ public class Manager : MonoBehaviour
     public void Restart()
     {
         Application.LoadLevel(0);
+        Time.timeScale = 1f;
     }
 
 }

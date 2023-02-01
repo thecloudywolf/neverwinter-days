@@ -44,7 +44,22 @@ namespace StarterAssets
 			SprintInput(value.isPressed);
 		}
 #endif
-
+		public GameObject _GM;
+		private Manager bool_script;
+		public void Update()
+        {
+			bool_script = _GM.GetComponent<Manager>();
+			if (bool_script.isPaused == true)
+            {
+				Cursor.visible = true;
+				Cursor.lockState = CursorLockMode.None;
+            }
+			if (bool_script.isPaused == false)
+            {
+				Cursor.visible = false;
+				Cursor.lockState = CursorLockMode.Locked;
+            }
+        }
 
 		public void MoveInput(Vector2 newMoveDirection)
 		{
