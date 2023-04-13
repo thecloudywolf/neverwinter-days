@@ -33,10 +33,11 @@ public class Trig : MonoBehaviour
         }
         
     }
-    void OnCollisinEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
+        
 
-
+       if (other.gameObject.tag != "Bullet")
         Destroy(gameObject);
 
     }

@@ -38,13 +38,15 @@ public class chase : MonoBehaviour
 
             Debug.Log("Score" + TotalScore.ToString());
             Destroy(gameObject);
+
         }
-        void OnTriggerEnter(Collider other)
+
+    }
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Bullet")
         {
-            if (other.gameObject.tag == "Bullet")
-            {
-                ZomHealth = ZomHealth - damage;
-            }
+            ZomHealth = ZomHealth - damage;
         }
     }
 }
