@@ -20,17 +20,6 @@ public class Trig : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown("Fire2"))
-        {
-            Destroy(cam.transform.GetChild(0).gameObject);
-
-            gunList[2].transform.position = cam.transform.position;
-
-            gunList[2].transform.rotation = cam.transform.rotation;
-            gunList[2].transform.parent = cam.transform;
-
-
-        }
         
     }
     void OnCollisionEnter(Collision other)
