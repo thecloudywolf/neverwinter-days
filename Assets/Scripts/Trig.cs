@@ -22,13 +22,14 @@ public class Trig : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2"))
         {
+          
             Destroy(cam.transform.GetChild(0).gameObject);
-
-            gunList[2].transform.position = cam.transform.position;
+          //  gunList[2].transform.SetParent(cam.transform);
+            gunList[2].transform.position = cam.transform.position + new Vector3(5,6,-12);
 
             gunList[2].transform.rotation = cam.transform.rotation;          
-            gunList[2].transform.parent = cam.transform;
-               
+         gunList[2].transform.parent = cam.transform;
+              
                    
         }
 

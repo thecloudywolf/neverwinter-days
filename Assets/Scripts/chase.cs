@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class chase : MonoBehaviour
 {
 
@@ -12,7 +13,19 @@ public class chase : MonoBehaviour
     public float  MaxZomHealth = 5f;
     public float damage = 1f;
 
+        public GameObject textShow;
+    public TMP_Text canvasText;
+    public static int Global = 0;
 
+
+    void  waiter()
+    {
+        Global += 1;
+        canvasText.text = Global.ToString();
+
+
+
+    }
 
 
     void Start()
@@ -39,7 +52,9 @@ public class chase : MonoBehaviour
         }
         if (ZomHealth < 1)
         {
+            waiter();
             Destroy(gameObject);
+            
         }
     }
     void OnTriggerEnter(Collider other)
