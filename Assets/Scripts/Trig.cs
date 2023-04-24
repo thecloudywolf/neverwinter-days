@@ -9,30 +9,26 @@ public class Trig : MonoBehaviour
     public GameObject[] gunList;
     public GameObject cam;
 
-  
-    void Start()
-   {
 
-  
+    void Start()
+    {
+
+
     }
 
     // Update is called once per frame
-  void Update()
+    void Update()
     {
 
-        if (Input.GetButtonDown("Fire2"))
-        {
-          
-            Destroy(cam.transform.GetChild(0).gameObject);
-          //  gunList[2].transform.SetParent(cam.transform);
-            gunList[2].transform.position = cam.transform.position + new Vector3(5,6,-12);
+        
+    }
+    void OnCollisionEnter(Collision other)
+    {
+        
 
-            gunList[2].transform.rotation = cam.transform.rotation;          
-         gunList[2].transform.parent = cam.transform;
-              
-                   
-        }
+       if (other.gameObject.tag != "Bullet")
+        Destroy(gameObject);
 
+    }
 
-    }  
 }
