@@ -38,7 +38,6 @@ public class chase : MonoBehaviour
             PlayerPrefs.SetInt("Score", TotalScore);
             PlayerPrefs.Save();
 
-            Debug.Log("Score" + TotalScore.ToString());
             shootText.text = "Score: " +TotalScore.ToString();
                 Destroy(gameObject);
 
