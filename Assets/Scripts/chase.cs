@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class chase : MonoBehaviour
 {
 
@@ -13,6 +14,7 @@ public class chase : MonoBehaviour
     public float damage = 1f;
     public float MaxMoveSpeed;
     public int TotalScore;
+    public TextMeshProUGUI shootText; 
 
 
     void Start()
@@ -20,7 +22,7 @@ public class chase : MonoBehaviour
         ZomHealth = MaxZomHealth;
         MoveSpeed = 0.02f;
     }
-
+    
     void Update()
     {
         transform.LookAt(Player);
@@ -37,7 +39,8 @@ public class chase : MonoBehaviour
             PlayerPrefs.Save();
 
             Debug.Log("Score" + TotalScore.ToString());
-            Destroy(gameObject);
+            shootText.text = "Score: " +TotalScore.ToString();
+                Destroy(gameObject);
 
         }
 
